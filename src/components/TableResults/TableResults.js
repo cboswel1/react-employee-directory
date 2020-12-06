@@ -3,7 +3,6 @@ import React, { useState, useEffect } from "react";
 import "./TableResults.css";
 
 const TableResults = ({ employees }) => {
-
   console.log(employees);
   const [randomEmployee, setRandomEmployee] = useState([]);
 
@@ -11,17 +10,17 @@ const TableResults = ({ employees }) => {
 
   return (
     <div>
-      <table>
+      <table id="dt-filter-search" class="table" cellspacing="0" width="100%">
         <thead>
           <tr>
-            <th scope="col">First</th>
-            <th scope="col">Last</th>
-            <th scope="col">Email</th>
-            <th scope="col">Phone</th>
-            <th scope="col">City</th>
-            <th scope="col">State</th>
-            <th scope="col">Postcode</th>
-            <th scope="col">Picture</th>
+            <th class="th-sm">First</th>
+            <th class="th-sm">Last</th>
+            <th class="th-sm">Email</th>
+            <th class="th-sm">Phone</th>
+            <th class="th-sm">City</th>
+            <th class="th-sm">State</th>
+            <th class="th-sm">Postcode</th>
+            <th class="th-sm">Photo</th>
           </tr>
         </thead>
         <tbody>

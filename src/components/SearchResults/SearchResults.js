@@ -17,13 +17,13 @@ const SearchResults = ({ employees, setEmployees }) => {
   return (
     <form>
       <input
-        placeholder="First Name"
+        placeholder="Last Name"
         name="name"
         type="search"
         value={employeeValue}
         onChange={event => setEmployeeValue(event.target.value)}
       />
-      <button>Search</button>
+      <button type="submit">Search</button>
     </form>
   );
 };
