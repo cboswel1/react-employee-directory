@@ -4,6 +4,8 @@ import "./TableResults.css";
 
 
 const TableResults = ({ employees }) => {
+
+
   console.log(employees);
   const [randomEmployee, setRandomEmployee] = useState([]);
 
@@ -14,6 +16,7 @@ const TableResults = ({ employees }) => {
       <table id="dt-filter-search" class="table" cellspacing="0" width="100%">
         <thead>
           <tr>
+            <th class="th-sm">Title</th>
             <th class="th-sm">First</th>
             <th class="th-sm">Last</th>
             <th class="th-sm">Email</th>
@@ -27,13 +30,15 @@ const TableResults = ({ employees }) => {
         <tbody>
           {randomEmployee.map(
             ({
+              
               location: { city, state, postcode },
               picture: { thumbnail },
               phone,
               email,
-              name: { first, last },
+              name: { title, first, last },
             }) => (
               <tr key={email}>
+                <td>{title}</td>
                 <td>{first}</td>
                 <td>{last}</td>
                 <td>{email}</td>

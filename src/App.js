@@ -1,25 +1,16 @@
-import React, { useState, useEffect } from "react";
-import TableResults from "./components/TableResults/TableResults";
-import SearchResults from "./components/SearchResults/SearchResults";
-import { getRandomEmployee } from "./utils/API";
+import React from "react";
+import Header from "./components/Header/Header";
+import Main from "./components/Main/main";
+
 import "./App.css";
 
 function App() {
-  const [initialEmployees, setInitialEmployees] = useState([]);
-  const [employeesUpdate, setEmployeesUpdate] = useState([]);
-
-  useEffect(() => {
-      console.log("hit app effect!")
-    getRandomEmployee()
-      .then(({ data: { results } }) => setInitialEmployees( results ))
-      .catch(err => console.log(err));
-  }, []);
-
   return (
     <div>
-      <h1>Employee Directory</h1>
-      <SearchResults employees={initialEmployees} setEmployees={setEmployeesUpdate} />
-      <TableResults employees={employeesUpdate} />
+      <React.StrictMode>
+        <Header />
+        <Main />
+      </React.StrictMode>
     </div>
   );
 }
