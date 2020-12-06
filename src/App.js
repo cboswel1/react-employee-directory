@@ -1,5 +1,5 @@
 import React from "react"; 
-import SearchResults from "../src/components/SearchResults/SearchResults"
+import TableResults from "./components/TableResults/TableResults"
 import "./App.css";
 
 function App() {
@@ -7,7 +7,7 @@ function App() {
     return(
         <div> 
             <h1>Employee Directory</h1>
-            <SearchResults />
+            <TableResults />
         </div>
 
     );
