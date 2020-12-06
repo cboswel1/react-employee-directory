@@ -17,7 +17,7 @@ const TableResults = ({ employees }) => {
             <th scope="col" onClick={() => {
               const sortedEmployees = [...employees];
               sortedEmployees.sort((a,b) => {
-                const employeeA = a.name.last; 
+                const employeeA = a.name.last;
                 const employeeB = b.name.last;
                 if ( employeeA < employeeB ) {
                   return -1;
@@ -48,10 +48,11 @@ const TableResults = ({ employees }) => {
                 email,
                 name: { first, last },
               }) => (
+                // id is social security number, not a secure unique id.
                 <tr key={email}>
                   <td>{last}</td>
                   <td>{first}</td>
-                  <td>{email}</td>
+                  <td><a href={"mailto:" + email} target="_blank" rel="noreferrer">{email}</a></td>
                   <td>{phone}</td>
                   <td>{city}</td>
                   <td>{state}</td>
