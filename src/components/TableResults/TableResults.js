@@ -13,9 +13,24 @@ const TableResults = ({ employees }) => {
         <table responsive class="table" cellspacing="0" width="100%">
           <thead>
             <tr>
-              <th class="th-sm">Title</th>
+              {/* sort employees https://www.smashingmagazine.com/2020/03/sortable-tables-react/ */}
+            <th scope="col" onClick={() => {
+              const sortedEmployees = [...employees];
+              sortedEmployees.sort((a,b) => {
+                const employeeA = a.name.last; 
+                const employeeB = b.name.last;
+                if ( employeeA < employeeB ) {
+                  return -1;
+                }
+                if ( employeeA > employeeB ) {
+                  return 1;
+                }
+                return 0;
+              })
+
+                setRandomEmployee(sortedEmployees);
+            }} >Last</th>
               <th class="th-sm">First</th>
-              <th class="th-sm">Last</th>
               <th class="th-sm">Email</th>
               <th class="th-sm">Phone</th>
               <th class="th-sm">City</th>
@@ -31,12 +46,11 @@ const TableResults = ({ employees }) => {
                 picture: { thumbnail },
                 phone,
                 email,
-                name: { title, first, last },
+                name: { first, last },
               }) => (
                 <tr key={email}>
-                  <td>{title}</td>
-                  <td>{first}</td>
                   <td>{last}</td>
+                  <td>{first}</td>
                   <td>{email}</td>
                   <td>{phone}</td>
                   <td>{city}</td>
