@@ -9,6 +9,7 @@ function App() {
   const [employeesUpdate, setEmployeesUpdate] = useState([]);
 
   useEffect(() => {
+      console.log("hit app effect!")
     getRandomEmployee()
       .then(({ data: { results } }) => setInitialEmployees( results ))
       .catch(err => console.log(err));

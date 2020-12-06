@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 // import { findRenderedDOMComponentWithClass } from "react-dom/test-utils";
 import "./TableResults.css";
 
+
 const TableResults = ({ employees }) => {
   console.log(employees);
   const [randomEmployee, setRandomEmployee] = useState([]);
@@ -31,9 +32,8 @@ const TableResults = ({ employees }) => {
               phone,
               email,
               name: { first, last },
-              id: { value },
             }) => (
-              <tr key={value}>
+              <tr key={email}>
                 <td>{first}</td>
                 <td>{last}</td>
                 <td>{email}</td>
