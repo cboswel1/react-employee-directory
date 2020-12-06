@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+import Form from 'react-bootstrap/Form'
 import "./SearchResults.css";
 
 
@@ -17,7 +18,7 @@ const SearchResults = ({ employees, setEmployees }) => {
   }, [employees, employeeValue, setEmployees, setEmployeeValue]);
 
   return (
-    <form>
+    <Form>
       <input
         placeholder="Last Name"
         name="name"
@@ -26,7 +27,7 @@ const SearchResults = ({ employees, setEmployees }) => {
         onChange={event => setEmployeeValue(event.target.value)}
       />
       {/* <button type="submit">Search</button> */}
-    </form>
+    </Form>
   );
 };
 

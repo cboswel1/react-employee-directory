@@ -1,8 +1,9 @@
-h1, p {
+h1, h3, p {
     text-align: center;
     font-family: 'Source Serif Pro', serif;
+    color: black;
 }
 
-#jumbo-bg {
-   background-color: #7DA2A9;
+.jumbotron {
+    background-color: #7DA2A9;
 }

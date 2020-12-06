@@ -1,9 +1,10 @@
-import React, {useState, useEffect} from "react";
+import React, { useState, useEffect } from "react";
 import SearchResults from "../SearchResults/SearchResults";
 import TableResults from "../TableResults/TableResults";
+import Container from "react-bootstrap/Container";
+import Row from "react-bootstrap/Row";
+import Col from "react-bootstrap/Col";
 import { getRandomEmployee } from "../../utils/API";
-
-
 
 function Main() {
   const [initialEmployees, setInitialEmployees] = useState([]);
@@ -18,16 +19,19 @@ function Main() {
 
   return (
     <div>
-    
-        <SearchResults
-          employees={initialEmployees}
-          setEmployees={setEmployeesUpdate}
-        />
-        <TableResults employees={employeesUpdate} />
-      
+      <Container fluid>
+        <Row>
+          <Col>
+            <SearchResults
+              employees={initialEmployees}
+              setEmployees={setEmployeesUpdate}
+            />
+            <TableResults employees={employeesUpdate} />
+          </Col>
+        </Row>
+      </Container>
     </div>
   );
 }
-
 
 export default Main;
