@@ -2,6 +2,8 @@ import React, { useState, useEffect } from "react";
 // import { findRenderedDOMComponentWithClass } from "react-dom/test-utils";
 import "./TableResults.css";
 
+
+
 const TableResults = ({ employees }) => {
   console.log(employees);
   const [randomEmployee, setRandomEmployee] = useState([]);
@@ -14,22 +16,7 @@ const TableResults = ({ employees }) => {
           <thead>
             <tr>
               {/* sort employees https://www.smashingmagazine.com/2020/03/sortable-tables-react/ */}
-            <th scope="col" onClick={() => {
-              const sortedEmployees = [...employees];
-              sortedEmployees.sort((a,b) => {
-                const employeeA = a.name.last;
-                const employeeB = b.name.last;
-                if ( employeeA < employeeB ) {
-                  return -1;
-                }
-                if ( employeeA > employeeB ) {
-                  return 1;
-                }
-                return 0;
-              })
-
-                setRandomEmployee(sortedEmployees);
-            }} >Last</th>
+              <th class="th-sm">Last</th>
               <th class="th-sm">First</th>
               <th class="th-sm">Email</th>
               <th class="th-sm">Phone</th>
@@ -48,7 +35,7 @@ const TableResults = ({ employees }) => {
                 email,
                 name: { first, last },
               }) => (
-                // id is social security number, not a secure unique id.
+                // id is social security number, not a secure unique id. Used email as unique 
                 <tr key={email}>
                   <td>{last}</td>
                   <td>{first}</td>
