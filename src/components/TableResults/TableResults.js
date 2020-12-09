@@ -3,7 +3,6 @@ import React, { useState, useEffect } from "react";
 import "./TableResults.css";
 
 
-
 const TableResults = ({ employees }) => {
   console.log(employees);
   const [randomEmployee, setRandomEmployee] = useState([]);
