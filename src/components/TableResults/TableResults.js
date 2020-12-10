@@ -56,6 +56,8 @@ import "./TableResults.css";
 
 // export default TableResults;
 
+//attempting props to make sort functionality easier
+
 function Table(props) {
   return (
     <div>
@@ -64,13 +66,13 @@ function Table(props) {
           <tr>
             {/* sort employees https://www.smashingmagazine.com/2020/03/sortable-tables-react/ */}
             <th class="th-sm"><button name="first" onClick={props.sort}>Last </button></th>
-            <th class="th-sm"><button onClick={props.sort}>First</button></th>
-            <th class="th-sm"><button onClick={props.sort}>Email</button></th>
-            <th class="th-sm"><button onClick={props.sort}>Phone</button></th>
-            <th class="th-sm"><button onClick={props.sort}>City</button></th>
-            <th class="th-sm"><button onClick={props.sort}>State</button></th>
-            <th class="th-sm"><button onClick={props.sort}>Postcode</button></th>
-            <th class="th-sm"><button onClick={props.sort}>Photo</button></th>
+            <th class="th-sm"><button> First</button></th>
+            <th class="th-sm"><button>Email</button></th>
+            <th class="th-sm"><button>Phone</button></th>
+            <th class="th-sm"><button>City</button></th>
+            <th class="th-sm"><button>State</button></th>
+            <th class="th-sm"><button>Postcode</button></th>
+            <th class="th-sm"><button>Photo</button></th>
           </tr>
         </thead>
         <tbody>
