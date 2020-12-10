@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import SearchResults from "../SearchResults/SearchResults";
-import TableResults from "../TableResults/TableResults";
+import Table from "../TableResults/TableResults";
 import Container from "react-bootstrap/Container";
 import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
@@ -26,7 +26,7 @@ function Main() {
               employees={initialEmployees}
               setEmployees={setEmployeesUpdate}
             />
-            <TableResults employees={employeesUpdate} />
+            <Table employees={employeesUpdate} />
           </Col>
         </Row>
       </Container>
